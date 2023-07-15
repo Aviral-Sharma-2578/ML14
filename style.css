@@ -4,6 +4,10 @@
     padding: 0px;
 }
 
+html{
+    scroll-behavior: smooth;
+}
+
 main{
     height: fit-content;
     background:  url("scene/image.png") no-repeat fixed center;
@@ -18,7 +22,8 @@ header{
 }
 
 #logo{
-    margin: 12px;
+    margin: 15px;
+    width: auto;
 }
 a{
     text-decoration: none;
@@ -33,10 +38,10 @@ li:hover{
 }
 #tryNow{
     padding: 9px;
-    font-size: 35px;
+    font-size: 25px;
     background-color: burlywood;
     border: 1px solid brown;
-    border-radius: 10px;
+    border-radius: 16px;
 }
 
 
@@ -48,7 +53,9 @@ ul{
 }
 
 ul>li{
-    margin: 40px;
+    margin: 20px;
+    margin-left: 40px;
+    margin-right: 40px;
     font-size: 25px;
     font-weight: bold;
 }
@@ -57,3 +64,37 @@ ul>li{
     color: white;
 }
 
+.content1{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+.content2{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: right;
+}
+#title{
+    margin: 50px;
+    font-size: 28px;
+}
+#cloud{
+    margin: 50px;
+}
+@media (max-width: 810px) {
+    #cloud{
+        visibility: hidden;
+    }
+}
+#play{
+    padding: 9px;
+    font-size: 25px;
+    background-color: burlywood;
+    border: 1px solid brown;
+    border-radius: 10px;
+}
+.jackpot{
+    margin: 50px;
+
+    float: right;
+}

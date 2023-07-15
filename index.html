@@ -6,26 +6,31 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="./style.css">
     <title>Document</title>
+    
 </head>
 <body>
     <main>
         <header id="header">
-            <div id="logo"><img src="scene/logo.png" alt="logo"></div>
+            <div id="logo"><img src="scene/logo.png" alt="logo" height="50"></div>
             <div id="navbar"><ul>
                 <li><a href="#" target="_blank">Home</a></li>
                 <li><a href="#" target="_blank">Docs</a></li>
             </ul></div>
-            <div id="try"><button id="tryNow">Try Now &darr;</button></div>
+            <div id="try"><a href="#human"><button id="tryNow">Try Now &darr;</button></a></div>
         </header>
-        <div id="title"><h1>Try out our Mario Playing AI</h1><br><i>ML14, IITI SoC 2023</i></div>
-        <div><img src="scene/Clouds.png" alt="Clouds"></div>
-        <div><button><img src="scene/play.png" alt="Play Button"></button></div>
-        <div class="jackpot">
-            <img src="scene/Jackpot.png" alt="Jackpot"><img src="scene/Jackpot.png" alt="Jackpot">
-            <img src="scene/Jackpot.png" alt="Jackpot"><img src="scene/Jackpot.png" alt="Jackpot" style="visibility: hidden;">
-            <img src="scene/Jackpot.png" alt="Jackpot">
+
+        <div class="content1">
+            <div id="title"><h1>Try out our <br> Mario Playing AI</h1><br><i>ML14, IITI SoC 2023</i><br><br><button id="play" style="font-size: 25px;">Play &darr;</div>
+            <div id="cloud"><img src="scene/Clouds.png" alt="Clouds"></div>
         </div>
-        <div><img src="scene/Pipe.png" alt="Pipe"></div>
+        <div class="content2">
+            <div class="jackpot">
+                <img src="scene/Jackpot.png" alt="Jackpot"><img src="scene/Jackpot.png" alt="Jackpot">
+                <img src="scene/Jackpot.png" alt="Jackpot"><img src="scene/Jackpot.png" alt="Jackpot" style="visibility: hidden;">
+                <img src="scene/Jackpot.png" alt="Jackpot">
+            </div>
+            <div id="pipe"><img src="scene/Pipe.png" alt="Pipe"></div>
+        </div>
         <div class="base">
             <img src="scene/brick1.png" alt="Bricks">
             <img src="scene/brick2.png" alt="Bricks">
@@ -33,10 +38,10 @@
             <img src="scene/brick4.png" alt="Bricks">
         </div>
     </main>
-    <div class="play">
-        <div class="bot"></div>
-        <div class="human"></div>
-    </div>
+    <section id="human"><iframe height="800" width="100%" data-src-desk="https://supermario-game.com/mario-game/mario.html" data-src-mob="https://supermario-game.com/mario-game/mobilemario.html" loading="lazy" id="game" src="https://supermario-game.com/mario-game/mobilemario.html"></iframe></section>
+    <section id="sample-results">
+        
+    </section>
     <footer>
         
     </footer>

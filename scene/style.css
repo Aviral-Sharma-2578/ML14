@@ -1,0 +1,55 @@
+.universal{
+    height: 100vh;
+    background-color: #F0F2F5;
+    display: flex;
+    flex-flow: column;
+    justify-content: flex-start;
+    align-items: center;
+}
+
+h1{
+    font-size: 50px;
+    color: #1877F2;
+}
+
+.box{
+    border-radius: 12px;
+    box-shadow: inset 0 -3em 3em rgba(0, 0, 0, 0.1), 0 0 0 2px rgb(255, 255, 255),
+    0.3em 0.3em 1em rgba(0, 0, 0, 0.3);
+    background-color: #FFFFFF;
+    display: flex;
+    flex-flow: column;
+    justify-content: center;
+    align-items: center;
+    width: 396px;
+    height: 300px;
+    
+}
+
+.inputs{
+    width: 363.6px;
+    height: 51.6px;
+    padding-left: 10px;
+    border: 0.1px solid gray;
+    border-radius: 4px;
+}
+
+::placeholder{
+    font-size: 17px;
+}
+
+button{
+    width: 376.6px;
+    height: 51.6px;
+    border: 0.1px solid gray;
+    border-radius: 4px;
+    background-color: #1877F2;
+    color: white;  
+    font-size: 20px;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.additional{
+    margin: 15px;
+    font-size: 16px;
+}

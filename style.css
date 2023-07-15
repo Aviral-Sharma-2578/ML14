@@ -1,0 +1,59 @@
+*{
+    box-sizing: border-box;
+    margin: 0px;
+    padding: 0px;
+}
+
+main{
+    height: fit-content;
+    background:  url("scene/image.png") no-repeat fixed center;
+    background-size: cover;
+}
+
+header{
+    background-color: antiquewhite;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+#logo{
+    margin: 12px;
+}
+a{
+    text-decoration: none;
+    color: black;
+    transition: top 0.2s ease; 
+}
+li:hover{
+    transform: translateY(-3px);
+}
+#try{
+    margin: 20px;
+}
+#tryNow{
+    padding: 9px;
+    font-size: 35px;
+    background-color: burlywood;
+    border: 1px solid brown;
+    border-radius: 10px;
+}
+
+
+ul{
+    display: flex;
+    list-style: none;
+    justify-content: space-between;
+    align-items: baseline;
+}
+
+ul>li{
+    margin: 40px;
+    font-size: 25px;
+    font-weight: bold;
+}
+
+#title{
+    color: white;
+}
+

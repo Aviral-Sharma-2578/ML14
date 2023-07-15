@@ -1,7 +1,3 @@
-"""
-@author: Viet Nguyen <nhviet1009@gmail.com>
-"""
-
 import torch
 from src.env import create_train_env
 from src.model import PPO
@@ -38,7 +34,6 @@ def eval(opt, global_model, num_states, num_actions):
         action = torch.argmax(policy).item()
         state, reward, done, info = env.step(action)
 
-        # Uncomment following lines if you want to save model whenever level is completed
         # if info["flag_get"]:
         #     print("Finished")
         #     torch.save(local_model.state_dict(),

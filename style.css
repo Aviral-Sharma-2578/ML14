@@ -7,18 +7,29 @@
 html{
     scroll-behavior: smooth;
 }
-
 main{
-    height: fit-content;
     background:  url("scene/image.png") no-repeat fixed center;
     background-size: cover;
 }
+div.main{
+    display: flex;
+    flex-direction: row;
+    height: 30rem;
+    font-family: 'Poppins';
+    justify-content: space-between;
+    padding-top: 2.5rem;
+}
 
 header{
-    background-color: rgba(92,148,252,255);
+    background-color: #F1FAEE;
     display: flex;
     flex-direction: row;
     justify-content: space-between;
+    font-family: 'Poppins';
+    padding: 0 7.1rem 0 7.1rem;
+    align-items: center;
+    position: sticky;
+    top:0;
 }
 
 #logo{
@@ -34,11 +45,14 @@ a{
     margin: 20px;
 }
 #tryNow{
-    padding: 9px;
-    font-size: 25px;
-    background-color: #d64d00;
-    border: 1px solid #brown;
-    border-radius: 16px;
+    padding: 7px 23px 7px 23px;
+    box-shadow: 3px 3px #000000;
+    font-size: 1.3rem;
+    font-weight: 700;
+    font-family: 'poppins';
+    background-color: #E5727B;
+    border: 3px solid;
+    border-radius: 3px;
 }
 
 
@@ -68,11 +82,14 @@ li:hover{
     display: flex;
     flex-wrap: wrap;
     justify-content: space-between;
+    padding: 0 5rem 0 5rem;
+    flex-direction: column;
 }
 .content2{
     display: flex;
     flex-wrap: wrap;
     justify-content: right;
+    flex-direction: column;
 }
 #title{
     margin: 50px;
@@ -117,4 +134,12 @@ li:hover{
 }
 #results>div{
     margin-bottom:5px;
+}
+
+.base{
+    display:flex;
+    flex-direction: row;
+    background: url('scene/brick2.png');
+    height: 10rem;
+    background-repeat: repeat-x;
 }

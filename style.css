@@ -15,7 +15,7 @@ main{
 }
 
 header{
-    background-color: antiquewhite;
+    background-color: rgba(92,148,252,255);
     display: flex;
     flex-direction: row;
     justify-content: space-between;
@@ -30,17 +30,14 @@ a{
     color: black;
     transition: top 0.2s ease; 
 }
-li:hover{
-    transform: translateY(-3px);
-}
 #try{
     margin: 20px;
 }
 #tryNow{
     padding: 9px;
     font-size: 25px;
-    background-color: burlywood;
-    border: 1px solid brown;
+    background-color: #d64d00;
+    border: 1px solid #brown;
     border-radius: 16px;
 }
 
@@ -53,11 +50,14 @@ ul{
 }
 
 ul>li{
-    margin: 20px;
+    margin: 25px;
     margin-left: 40px;
     margin-right: 40px;
     font-size: 25px;
     font-weight: bold;
+}
+li:hover{
+    transform: translateY(-3px);
 }
 
 #title{
@@ -89,7 +89,7 @@ ul>li{
 #play{
     padding: 9px;
     font-size: 25px;
-    background-color: burlywood;
+    background-color: #d64d00;
     border: 1px solid brown;
     border-radius: 10px;
 }
@@ -97,4 +97,24 @@ ul>li{
     margin: 50px;
 
     float: right;
+}
+
+#sample-results{
+    background: url("scene/mario.jpg") no-repeat fixed center;
+    background-size: cover;
+    margin: -10px;
+}
+#result-heading{
+    padding: 10px;
+    color: white;
+    font-size: 50px;
+    text-align: center;
+}
+#results{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+}
+#results>div{
+    margin-bottom:5px;
 }

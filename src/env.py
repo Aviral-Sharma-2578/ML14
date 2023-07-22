@@ -136,10 +136,12 @@ class MultipleEnvironments:
             actions = COMPLEX_MOVEMENT
         self.envs = [create_train_env(world, stage, actions, output_path=output_path) for _ in range(num_envs)]
         self.num_states = self.envs[0].observation_space.shape[0]
+        self.start_event = mp.Event()
         self.num_actions = len(actions)
         for index in range(num_envs):
             process = mp.Process(target=self.run, args=(index,))
             process.start()
+            self.start_event.wait()
             self.env_conns[index].close()
 
     def run(self, index):

@@ -141,7 +141,6 @@ class MultipleEnvironments:
         for index in range(num_envs):
             process = mp.Process(target=self.run, args=(index,))
             process.start()
-            self.start_event.wait()
             self.env_conns[index].close()
 
     def run(self, index):

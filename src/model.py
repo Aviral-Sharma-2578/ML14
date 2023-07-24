@@ -1,5 +1,5 @@
 import torch.nn as nn
-import torch.nn.functional as F
+import torch.nn.functional as Func
 
 
 class PPO(nn.Module):
@@ -23,9 +23,9 @@ class PPO(nn.Module):
                 nn.init.constant_(module.bias, 0)
 
     def forward(self, x):
-        x = F.relu(self.conv1(x))
-        x = F.relu(self.conv2(x))
-        x = F.relu(self.conv3(x))
-        x = F.relu(self.conv4(x))
+        x = Func.relu(self.conv1(x))
+        x = Func.relu(self.conv2(x))
+        x = Func.relu(self.conv3(x))
+        x = Func.relu(self.conv4(x))
         x = self.linear(x.view(x.size(0), -1))
         return self.actor_linear(x), self.critic_linear(x)

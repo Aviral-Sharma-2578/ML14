@@ -57,21 +57,6 @@ class CustomReward(Wrapper):
                 reward += 50
             else:
                 reward -= 50
-        if self.world == 7 and self.stage == 4:
-            if (506 <= info["x_pos"] <= 832 and info["y_pos"] > 127) or (
-                    832 < info["x_pos"] <= 1064 and info["y_pos"] < 80) or (
-                    1113 < info["x_pos"] <= 1464 and info["y_pos"] < 191) or (
-                    1579 < info["x_pos"] <= 1943 and info["y_pos"] < 191) or (
-                    1946 < info["x_pos"] <= 1964 and info["y_pos"] >= 191) or (
-                    1984 < info["x_pos"] <= 2060 and (info["y_pos"] >= 191 or info["y_pos"] < 127)) or (
-                    2114 < info["x_pos"] < 2440 and info["y_pos"] < 191) or info["x_pos"] < self.current_x - 500:
-                reward -= 50
-                done = True
-        if self.world == 4 and self.stage == 4:
-            if (info["x_pos"] <= 1500 and info["y_pos"] < 127) or (
-                    1588 <= info["x_pos"] < 2380 and info["y_pos"] >= 127):
-                reward = -50
-                done = True
 
         self.current_x = info["x_pos"]
         return state, reward / 10., done, info

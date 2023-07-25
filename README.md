@@ -6,3 +6,11 @@ With the script, you can **Test the model** through `python test.py`. e.g. `pyth
 **Note**: If the render is too fast, append `env.render()` in **test.py** with `time.sleep(0.5)`. It is recommended to use gym environment that supports old step-API as well.
 
 P.s.: We shared our work of algorithms that we tried earlier in the report.
+https://colab.research.google.com/drive/1N2DSl8mbCkk6jfWbc1LNk9DnV4aQ4S02?usp=sharing
+(duel DQN)
+
+https://colab.research.google.com/drive/12qgT44ga8cCsMlW8QT4hbWlquCHm4SuS?usp=sharing
+(DQN)
+
+https://colab.research.google.com/drive/1p0vAZvbjvMyUlE-6xB-nlkX4yH7mp3hf?usp=sharing
+(DDQN)

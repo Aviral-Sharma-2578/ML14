@@ -4,6 +4,7 @@ from gym import Wrapper
 from nes_py.wrappers import JoypadSpace
 from gym_super_mario_bros.actions import SIMPLE_MOVEMENT, COMPLEX_MOVEMENT, RIGHT_ONLY
 import cv2
+import queue
 import numpy as np
 import subprocess as sp
 import torch.multiprocessing as mp
@@ -51,6 +52,7 @@ class CustomReward(Wrapper):
             self.monitor.record(state)
         state = process_frame(state)
         reward += (info["score"] - self.curr_score) / 40.
+        reward += info["coins"] * 20
         self.curr_score = info["score"]
         if done:
             if info["flag_get"]:
@@ -112,7 +114,7 @@ def create_train_env(world, stage, actions, output_path=None):
 
 class MultipleEnvironments:
     def __init__(self, world, stage, action_type, num_envs, output_path=None):
-        self.agent_conns, self.env_conns = zip(*[mp.Pipe() for _ in range(num_envs)])
+        self.agent_queues = [queue.Queue() for _ in range(num_envs)]
         if action_type == "right":
             actions = RIGHT_ONLY
         elif action_type == "simple":
@@ -121,20 +123,21 @@ class MultipleEnvironments:
             actions = COMPLEX_MOVEMENT
         self.envs = [create_train_env(world, stage, actions, output_path=output_path) for _ in range(num_envs)]
         self.num_states = self.envs[0].observation_space.shape[0]
-        self.start_event = mp.Event()
         self.num_actions = len(actions)
         for index in range(num_envs):
-            process = mp.Process(target=self.run, args=(index,))
-            process.start()
-            self.env_conns[index].close()
+            self.run(index)
 
     def run(self, index):
-        self.agent_conns[index].close()
         while True:
-            request, action = self.env_conns[index].recv()
+            request, action = self.agent_queues[index].get()
             if request == "step":
-                self.env_conns[index].send(self.envs[index].step(action.item()))
+                self.agent_queues[index].task_done()  # For queue.Queue, task_done() must be called after processing the request.
+                self.agent_queues[index].put(self.envs[index].step(action.item()))
             elif request == "reset":
-                self.env_conns[index].send(self.envs[index].reset())
+                self.agent_queues[index].task_done()
+                self.agent_queues[index].put(self.envs[index].reset())
             else:
                 raise NotImplementedError
+
+
+

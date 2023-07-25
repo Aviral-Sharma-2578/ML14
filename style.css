@@ -1,0 +1,206 @@
+*{
+    box-sizing: border-box;
+    margin: 0px;
+    padding: 0px;
+}
+
+html{
+    scroll-behavior: smooth;
+}
+main{
+    background:  url("scene/image.png") no-repeat fixed center;
+    background-size: cover;
+}
+div.main{
+    display: flex;
+    flex-direction: row;
+    height: 35rem;
+    font-family: 'Poppins';
+    justify-content: space-between;
+    padding-top: 2.5rem;
+}
+
+header{
+    background-color: #F1FAEE;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    font-family: 'Poppins';
+    padding: 0 7.1rem 0 7.1rem;
+    align-items: center;
+    position: sticky;
+    top:0;
+}
+
+#logo{
+    margin: 15px;
+    width: auto;
+}
+a{
+    text-decoration: none;
+    color: black;
+    transition: top 0.2s ease; 
+}
+#try{
+    margin: 20px;
+}
+#tryNow{
+    padding: 7px 23px 7px 23px;
+    box-shadow: 3px 3px #000000;
+    font-size: 1.3rem;
+    font-weight: 700;
+    font-family: 'poppins';
+    background-color: #E5727B;
+    border: 3px solid;
+    border-radius: 3px;
+}
+
+
+ul{
+    display: flex;
+    list-style: none;
+    justify-content: space-between;
+    align-items: baseline;
+}
+
+ul>li{
+    margin: 25px;
+    margin-left: 40px;
+    margin-right: 40px;
+    font-size: 25px;
+    font-weight: bold;
+}
+li:hover{
+    transform: translateY(-3px);
+}
+
+#title{
+    color: white;
+}
+
+.content1{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    padding: 0 5rem 0 5rem;
+    flex-direction: column;
+}
+.content2{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: right;
+    flex-direction: column;
+}
+#title{
+    margin: 50px;
+    font-size: 28px;
+}
+#cloud{
+    margin: 50px;
+}
+@media (max-width: 810px) {
+    #cloud{
+        visibility: hidden;
+    }
+}
+#play{
+    padding: 9px;
+    font-size: 25px;
+    background-color: #d64d00;
+    border: 1px solid brown;
+    border-radius: 10px;
+}
+.jackpot{
+    margin: 50px;
+
+    float: right;
+}
+
+#sample-results{
+    background: url("scene/mario.jpg") no-repeat fixed center;
+    background-size: cover;
+    margin: -10px;
+}
+#result-heading{
+    padding: 10px;
+    color: white;
+    font-size: 50px;
+    text-align: center;
+}
+#results{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+}
+#results>div{
+    margin-bottom:5px;
+}
+
+.base{
+    display:flex;
+    flex-direction: row;
+    background: url('scene/brick2.png');
+    height: 10rem;
+    background-repeat: repeat-x;
+}
+
+section.game{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 2rem 7rem 0 7rem;
+}
+
+#gameplay{
+    height: 45rem;
+    background-color: #000000;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+
+div.game-name{
+    font-family: 'poppins';
+    font-size: 2rem;
+    color:beige;
+    font-weight: 900;
+    margin:1rem;
+}
+div.bot{
+    height:530px;
+    width:530px;
+    background-color:cadetblue;
+    display: flex;
+    flex-direction: row;
+    align-items: left;
+}
+section.console_button{
+    display: flex;
+    flex-direction: column;
+    align-self: center;
+    justify-content: center;
+}
+#Start{
+    height:4rem;
+    width:4rem;
+    background-color: #000000;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    border: #000000;
+    margin:1rem;
+}
+#Refresh{
+    height:4rem;
+    width:4rem;
+    background-color: #000000;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    border: #000000;
+    margin:1rem;   
+}
+#video_bot_123{
+    height:530px;
+    width:115%;
+}

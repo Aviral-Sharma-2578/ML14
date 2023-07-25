@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="./style.css">
+    <title>Document</title>
+    
+</head>
+<body>
+    <header id="header">
+        <div id="logo"><img src="scene/logo.png" alt="logo" height="50"></div>
+        <div id="navbar"><ul>
+            <li><a href="#" target="_blank">Home</a></li>
+            <li><a href="https://docs.google.com/document/d/12zPz782kYWsiQWaP7t9qj0Qol7r9f9IOtww4BqDyJnY/edit?usp=sharing" target="_blank">Docs</a></li>
+        </ul></div>
+        <!-- <div id="try"><a href="#human"><button id="tryNow">Try Now &darr;</button></a></div> -->
+        <div id="try"><a href="#gameplay"><button id="tryNow">Try Now <img src="scene\Arrow 1.svg"></button></a></div>
+    </header>
+
+    <main>
+        <div class="main">
+        <div class="content1">
+            <div id="title"><h1>Try out our, <br> Mario Playing AI</h1><i>ML14, IITI SoC 2023</i><br><br><a href="#gameplay"><button id="tryNow">Play <img src="scene\Arrow 1.svg"></button></a></div>
+            
+        </div>
+        <div class="content2">
+            <div id="cloud"><img src="scene/Clouds.svg" alt="Clouds"></div>
+            <div style="display: flex; flex-direction: row;">
+            <div class="jackpot">
+                <img src="scene/Jackpot.svg" alt="Jackpot"><img src="scene/Jackpot.svg" alt="Jackpot"><img src="scene/Jackpot.svg" alt="Jackpot"><img src="scene/Jackpot.svg" alt="Jackpot" style="visibility: hidden;"><img src="scene/Jackpot.svg" alt="Jackpot">
+            </div>
+            <div id="pipe"><img src="scene/Pipe.svg" alt="Pipe"></div>
+            </div>
+        </div>
+        </div>
+        <div class="base">
+        </div>
+    </main>
+    <section id="gameplay">
+        <section class="game">
+            <div class="game-name">Human</div>
+            
+            <!-- <iframe height="400px" width="400px" src="https://jcw87.github.io/c2-smb1/"></iframe> -->
+        </section>
+        <section class="console_button">
+            <button id="Start" onClick="play()"><img style="height:100%; width:100%" src="scene\Play.svg"></button>
+            <button id="Refresh" onClick="window.location.reload();"><img style="height:90%; width:90%" src="scene\Refresh.svg"></button>
+        </section>
+        <section class="game">
+            <div class="game-name">Bot</div>
+            <div class="bot">
+                <!-- <video id="bot_video" autoplay muted playsinline height="530px" width="115%" style="object-fit: fill;">
+                    <source src="demo_video\Level1.mp4" type="video/mp4">
+                </video> -->
+            </div> 
+        </section>
+    </section>
+</body>
+<script type="text/javascript" src="script.js"></script>
+</html>

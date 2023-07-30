@@ -26,8 +26,8 @@ def get_args():
     parser.add_argument('--num_epochs', type=int, default=5)
     parser.add_argument('--epsilon', type=float, default=0.2, help='parameter for Clipped Surrogate Objective')
     parser.add_argument('--batch_size', type=int, default=16)
-    parser.add_argument("--num_local_steps", type=int, default=5)
-    parser.add_argument("--num_global_steps", type=int, default=5)
+    parser.add_argument("--num_local_steps", type=int, default=512)
+    parser.add_argument("--num_global_steps", type=int, default=5e6)
     parser.add_argument("--num_processes", type=int, default=8)
     parser.add_argument("--save_interval", type=int, default=50, help="Number of steps between savings")
     parser.add_argument("--saved_path", type=str, default="trained_models")
@@ -55,9 +55,14 @@ def train(opt):
 
     # The optimizer is created using the model's parameters
     optimizer = torch.optim.Adam(model.parameters(), lr=opt.lr)
+    num_processes = opt.num_processes
+    curr_states = [None] * num_processes
+
+    for i in range(num_processes):
+        curr_states[i] = envs.envs[i].reset()
 
     curr_episode = 0
-    for fr in range(1000):
+    while True:
         curr_episode += 1
         old_log_policies = []
         actions = []
